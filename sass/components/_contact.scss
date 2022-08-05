@@ -13,9 +13,16 @@ $breakpoints:
 
 @mixin media-up($breakpoint)
 {
-    @media screen and (max-width: map-get($breakpoints,$breakpoint))
+    @if map-has-key($breakpoints,$breakpoint)
     {
-        @content;
+        @media screen and (max-width: map-get($breakpoints,$breakpoint))
+        {
+            @content;
+        }
+    }
+    @else
+    {
+        @warn "El valor '#{$breakpoint}' no ha sido declarado como breakpoints";
     }
 }
 
