@@ -1,5 +1,18 @@
+@use '../abstract/index' as a;
+
 *,::after,::before
 {
     margin: 0;
     box-sizing: border-box;
+}
+
+html
+{
+    font-size: 62.5%;
+}
+
+body
+{
+    font-size: 1.6rem;
+    font-family: a.$fist-font;
 }

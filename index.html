@@ -6,8 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hola</h1>
+  <section class="contact">
+    <figure class="cantact__picture">
+      <img src="./assets/figure-woman.svg" alt="ilustración de una mujer viendo flores" class="contact__img">
+    </figure>
+    <form action="">
+      <h2 class="contact__title">We keep in touch</h2>
+      <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" required class="contact__input">
+      <input type="email" name="email" id="email" placeholder="Ingresa tu email" required class="contact__input">
+      <textarea placeholder="Mensaje" name="comment" id="comment" class="contact__input contact__input--area"></textarea>
+      <button type="submit" class="contact__cta">Enviar ahora</button>
+    </form>
+  </section>
 </body>
 </html>
