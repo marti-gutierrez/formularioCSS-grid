@@ -69,6 +69,33 @@ $breakpoints:
             padding: 20px;
         }
     }
+    &__group
+    {
+        &-input
+        {
+            position: relative;
+        }
+        &--correct
+        {
+            .contact__validation-state
+            {
+                color: a.$color-correct;
+                opacity: 1;
+            }
+        }
+        &--incorrect
+        {
+            .contact__validation-state
+            {
+                color: a.$color-incorrect;
+                opacity: 1;
+            }
+            .contact__input
+            {
+                border: 3px solid a.$color-incorrect;
+            }
+        }
+    }
     &__img
     {
         inline-size: 90%;
@@ -105,6 +132,15 @@ $breakpoints:
             background-color: a.$background-img;
         }
     }
+    &__validation-state
+    {
+        position: absolute;
+        right: 10px;
+        bottom: 20px;
+        z-index: 2;
+        font-size: 1.6rem;
+        opacity: 0;
+    }
     &__input
     {
         inline-size: 100%;
@@ -113,10 +149,26 @@ $breakpoints:
         border: 1px solid black;
         border-radius: 2px;
         font-family: a.$fist-font;
+        transition: .3s ease all;
+        &:focus
+        {
+            border: 3px solid a.$color-activate;
+            box-shadow: 3px 0 30px rgba(163,163,163,0.4)
+        }
         &--area
         {
             block-size: 15rem;
             resize: none;
+        }
+        &-error
+        {
+            display: none;
+            font-size: 1.2rem;
+            margin-block-end: 0;
+            &--activate
+            {
+                display: block;
+            }
         }
     }
     &__cta
@@ -128,9 +180,40 @@ $breakpoints:
         border: none;
         outline: none;
         border-radius: 6px;
-        box-shadow: 0 2px 10px -4px rgba(0,0,0,0.5);
         color: white;
         font-family: a.$fist-font;
         font-weight: 700;
+        transition: .1s ease all;
+        &:hover
+        {
+            box-shadow: 0 2px 10px -4px rgba(0,0,0,0.5);
+        }
+    }
+    &__message
+    {
+        block-size: 4.5rem;
+        padding: 0.4rem 1.5rem;
+        border-radius: 2px;
+        background-color: a.$color-error;
+        display: none;
+        & p
+        {
+            text-align: center;
+            margin: 0;
+        };
+        &--activate
+        {
+            display: block;
+        }
+        &-exito
+        {
+            font-size: 1.4rem;
+            color: a.$color-exito;
+            display: none;
+            &--activate
+            {
+                display: block;
+            }
+        }
     }
 }

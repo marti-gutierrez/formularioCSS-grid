@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Formulario de contacto</title>
@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/88c8d89cd2.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <section class="contact">
@@ -17,11 +18,32 @@
     </figure>
     <form action="" class="contact__form">
       <h2 class="contact__title">We keep in touch</h2>
-      <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" required class="contact__input">
-      <input type="email" name="email" id="email" placeholder="Ingresa tu email" required class="contact__input">
+      <div class="contact__group" id="group__name">
+        <div class="contact__group-input">
+          <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" autocomplete="name" required class="contact__input">
+          <i class="contact__validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="contact__input-error">El nombre solo puede contener letras y de 4 a 16 dígitos</p>
+      </div>
+      <div class="contact__group" id="group__email">
+        <div class="contact__group-input">
+          <input type="email" name="email" id="email" placeholder="Ingresa tu email" required autocomplete="email" class="contact__input">
+          <i class="contact__validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="contact__input-error">El correo tiene que ser de 4 a 16 dígitos y solo puede contener números, letras y guion bajo</p>
+      </div>
       <textarea placeholder="Mensaje" name="comment" id="comment" class="contact__input contact__input--area"></textarea>
+      <div class="contact__message" id="contact__message">
+        <p>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <b>Error:</b>
+          Por favor rellena el formulario correctamente.
+        </p>
+      </div>
       <button type="submit" class="contact__cta">Enviar ahora</button>
+      <p class="contact__message-exito">Información enviada exitosamente!</p>
     </form>
   </section>
+  <script src="./main.js"></script>
 </body>
 </html>
